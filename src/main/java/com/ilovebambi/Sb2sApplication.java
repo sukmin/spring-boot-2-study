@@ -1,9 +1,22 @@
 package com.ilovebambi;
 
-public class Sb2sApplication {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
+@EnableAutoConfiguration
+public class Sb2sApplication implements CommandLineRunner {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(Sb2sApplication.class);
 
 	public static void main(String[] args) {
-		System.out.println("hello world");
+		SpringApplication.run(Sb2sApplication.class, args);
 	}
 
+	@Override
+	public void run(String... args) throws Exception {
+		LOGGER.info("hello world");
+	}
 }
